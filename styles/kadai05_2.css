@@ -1,0 +1,255 @@
+/* -----------------------------
+   全体で使用する変数を定義
+----------------------------- */
+:root {
+  /* カラーパレット */
+  --primary-color: #4f46e5; /* メインカラー（アクセント） */
+  --primary-hover: #4338ca;
+  --text-color: #333; /* 基本テキスト */
+  --text-light: #555;
+  --bg-color: #f8f9fa; /* ページ背景 */
+  --panel-bg: #ffffff; /* パネルやダイアログの背景 */
+  --border-color: #dee2e6; /* 境界線 */
+  --star-color: #f59f0b; /* 星の色 */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* スタイル */
+  --border-radius-sm: 0.3em;
+  --border-radius-md: 0.5em;
+  --box-shadow: 0 4px 12px var(--shadow-color);
+  --transition-speed: 0.2s;
+}
+
+/* -----------------------------
+   基本スタイルとページレイアウト
+----------------------------- */
+main h2 {
+  margin: 2em 0 1em;
+  color: var(--text-color);
+}
+
+main h3 {
+  margin: 3em 0 1em;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5em;
+  font-size: 1.3em;
+}
+
+/* -----------------------------
+   ヘッダーのログインボタン
+----------------------------- */
+#loginBtn {
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity var(--transition-speed);
+}
+
+#loginBtn:hover {
+  opacity: 0.8;
+}
+
+/* -----------------------------
+   ダイアログ本体のスタイル
+----------------------------- */
+#loginDialog {
+  max-width: 480px;
+  width: 90vw;
+  margin: auto;
+  border: none;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  padding: 0;
+}
+
+#loginDialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+/* -----------------------------
+   フォーム共通スタイル（改善版）
+----------------------------- */
+
+/* フォームを含むセクション/ラッパーのスタイル */
+.review-form-section {
+  background-color: var(--panel-bg);
+  padding: 2em;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+}
+/* loginDialogはpadding:0なので、Wrapperにpaddingを設定 */
+#loginWrapper {
+  padding: 2em;
+}
+
+/* フォーム自体のレイアウト */
+#reviewForm,
+#loginWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 各入力グループ間の余白を統一 */
+}
+
+/* ラベルと入力欄のグループ */
+#reviewForm div,
+#loginWrapper div:not(#loginHeader) {
+  /* ヘッダーを除外 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* ラベルと入力欄の間の余白 */
+  width: 100%;
+  margin: 0;
+}
+
+/* ラベルのスタイル */
+#reviewForm label,
+#loginWrapper label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+/* 入力欄（input, textarea, select）共通スタイル */
+#reviewForm input,
+#reviewForm textarea,
+#reviewForm select,
+#loginWrapper input {
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  background-color: #fdfdff;
+  transition: border-color var(--transition-speed),
+    box-shadow var(--transition-speed);
+  appearance: none; /* OS標準のスタイルをリセット */
+}
+
+/* selectの矢印（▼）を追加 */
+#reviewForm select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  padding-right: 2.5em; /* 矢印のスペースを確保 */
+}
+
+#reviewForm textarea {
+  resize: vertical; /* 縦方向のみリサイズ可能に */
+  min-height: 120px;
+}
+
+/* 入力欄フォーカス時のスタイル */
+#reviewForm input:focus-visible,
+#reviewForm textarea:focus-visible,
+#reviewForm select:focus-visible,
+#loginWrapper input:focus-visible {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* 送信ボタンのスタイル */
+#reviewForm button[type="submit"],
+#loginWrapper button[type="submit"] {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.9em;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color var(--transition-speed),
+    transform var(--transition-speed);
+}
+
+#reviewForm button[type="submit"]:hover,
+#loginWrapper button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ログインフォーム固有のスタイル */
+#loginHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+}
+
+#loginHeader h2 {
+  font-size: 1.2em;
+  margin: 0;
+  color: var(--text-color);
+}
+
+#loginHeader button {
+  font-size: 1.8em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  color: var(--text-light);
+  transition: color var(--transition-speed);
+}
+#loginHeader button:hover {
+  color: var(--text-color);
+}
+
+#loginWrapper div:has(a) {
+  text-align: center;
+  font-size: 0.9em;
+}
+#loginWrapper a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+#loginWrapper a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   お客様の声（voice）のスタイル
+----------------------------- */
+.voice {
+  margin: 2em 0;
+  border: 1px solid var(--border-color);
+  padding: 1.5em;
+  border-radius: var(--border-radius-md);
+  background-color: var(--panel-bg);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+}
+
+.voice:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.voice h4 {
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  color: var(--star-color);
+  margin: 0 0 0.8em;
+}
+
+.voice p {
+  margin: 0 0 0.5em;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.voice .name {
+  margin-top: 1em;
+  text-align: right;
+  font-size: 0.9em;
+  color: var(--text-color);
+}

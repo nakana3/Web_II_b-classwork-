@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ECC Pizza | お客様の声</title>
+  <link rel="stylesheet" href="./styles/ECCPizza_top.css">
+  <link rel="stylesheet" href="./styles/kadai05_2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <header>
+    <h1><img src="img/ECCPizza_logo_250_90.png" alt="ロゴ" width="125"></h1>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#">メニュー</a></li>
+        <li><a href="#">店舗情報</a></li>
+        <li><a href="#">ECC Pizza について</a></li>
+        <li><a href="#">最新ニュース</a></li>
+        <li><a href="#">お客様の声</a></li>
+        <li><a href="#">カート</a></li>
+        <li id="loginBtn">ログイン</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>お客様の声</h2>
+
+    <section class="review-form-section">
+      <h3>レビューを投稿する</h3>
+      <form id="reviewForm">
+        <div>
+          <label for="userName">お名前:</label>
+          <input type="text" id="userName" required>
+        </div>
+        <div>
+          <label for="starRating">評価:</label>
+          <select id="starRating" required>
+            <option value="5">★★★★★</option>
+            <option value="4">★★★★☆</option>
+            <option value="3">★★★☆☆</option>
+            <option value="2">★★☆☆☆</option>
+            <option value="1">★☆☆☆☆</option>
+          </select>
+        </div>
+        <div>
+          <label for="userComment">コメント:</label>
+          <textarea id="userComment" rows="4" required></textarea>
+        </div>
+        <button type="submit">投稿する</button>
+      </form>
+    </section>
+    <h3>for文で生成したレビュー</h3>
+    <div id="voiceFor"></div>
+
+    <h3>for-ofで生成したレビュー</h3>
+    <div id="voiceForOf"></div>
+
+    <h3>forEachで生成したレビュー</h3>
+    <div id="voiceForEach"></div>
+  </main>
+
+  <footer>
+    <p><small>Copyright &copy; ECC Pizza.</small></p>
+  </footer>
+
+  <dialog id="loginDialog">
+    <div id="loginWrapper">
+      <header id="loginHeader">
+        <h2>ログイン</h2>
+        <button type="button" id="closeBtn" class="material-icons">close</button>
+      </header>
+      <div>
+        <label for="userId">ユーザーID:</label>
+        <input type="text" name="userId" id="userId">
+      </div>
+      <div>
+        <label for="password">パスワード:</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <div><a href="#">新規登録はこちら</a></div>
+      <button type="submit" id="submitBtn">ログイン</button>
+    </div>
+  </dialog>
+
+  <script src="./js/kadai05_2.js"></script>
+</body>
+
+</html>
