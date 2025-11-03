@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/kadai06_common.css">
+  <link rel="stylesheet" href="styles/kadai06_1.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>kadai06 - JavaScript1</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <h1 id="logo">Web2 JavaScript</h1>
+    </header>
+
+    <main id="content-wrap">
+      <h2>動的な要素の追加</h2>
+
+      <div id="content">
+        <div class="wrapper">
+          <div class="todo-wrap">
+            <table class="todo">
+              <thead>
+                <tr>
+                  <th class="comment">コメント</th>
+                  <th class="control">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- ここにJavaScriptで要素を追加 -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="control-wrap">
+            <h3>新しいタスクの追加</h3>
+            <form action="" method="post" class="add-form">
+              <label>コメント</label>
+              <input type="text" name="comment" value="">
+              <button type="submit">追加</button>
+            </form>
+          </div>
+
+        </div><!--/.wrapper-->
+      </div><!--/#content-->
+
+    </main><!--/#contentWrap-->
+
+    <footer>
+      <div id="topArea"><a href="#wrapper"><i class="material-icons">keyboard_arrow_up</i></a></div>
+      <p id="copyright" class="font-weight-b">
+        <small>copyright &copy; <span id="year"></span> ECC Comp</small>
+      </p>
+    </footer>
+  </div><!--/#wrapper-->
+
+  <script src="./js/kadai06_1.js"></script>
+</body>
+
+</html>

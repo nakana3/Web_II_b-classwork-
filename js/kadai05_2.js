@@ -58,16 +58,18 @@ function renderReviews() {
 }
 
 // イベントリスナーの設定
-reviewForm.addEventListener(    // 
+reviewForm.addEventListener(
     "submit", function(event) {
         event.preventDefault();  // デフォルトの送信動作をキャンセル
 
         // 数値は文字で送られるので数値に変換
         const newReview = {
-            stars: starRating.value,
+            stars: parseInt(starRating.value, 10),
             text: userComment.value,
             name: userName.value,
         };
+        // .textContent = <p>の中身
+        // .value = <input>や<textarea>の中身
 
         // reviews配列の最初に追加
         reviews.unshift(newReview);
