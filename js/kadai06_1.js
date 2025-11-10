@@ -44,5 +44,7 @@ addBtn.addEventListener("click", (event) => {
     row.querySelector("td:first-child").innerText = commentField.value;
 
     todoListItemWrap.append(row);
+
+    querySelector([])
   }
 });
