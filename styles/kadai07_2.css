@@ -1,0 +1,119 @@
+#contentHeader {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
+#openItemDialog, #addItem {
+  border: none;
+  border-radius: 0.375rem;
+  line-height: 36px;
+  padding: 0 12px;
+  background: #0099e4;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#contentWrap {
+  width: 100%;
+  margin: 10px auto;
+}
+
+#itemList {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#itemList tr {
+  text-align: center;
+}
+
+#itemList thead {
+  border-bottom: 1px solid #ccc;
+}
+
+th,
+td {
+  line-height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+tbody tr:hover td,
+tbody tr:hover th {
+  background-color: #f4fbff;
+}
+
+#itemDialog {
+  width: 30%;
+  margin: auto;
+}
+
+#itemDialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#dialogWrap {
+  width: 100%;
+  padding: 10px;
+}
+
+#addItemForm .form-item-wrap {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0;
+}
+
+#addItemForm label {
+  width: 20%;
+}
+
+#addItemForm div .form-item {
+  width: 80%;
+}
+
+.form-item input {
+  padding: 3px;
+}
+
+textarea {
+  resize: none;
+  padding: 3px;
+}
+
+#addItem {
+  width: 50%;
+}
+
+#itemDialog span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.edit {
+  border: none;
+  border-radius: 0.375rem;
+  line-height: 36px;
+  padding: 0 12px;
+  background: #90ee90;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.remove {
+  border: none;
+  border-radius: 0.375rem;
+  line-height: 36px;
+  padding: 0 12px;
+  background: #f00;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
