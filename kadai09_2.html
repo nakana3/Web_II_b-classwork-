@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/ECCPizza_top.css">
+  <link rel="stylesheet" href="./styles/kadai07_2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>ECC Pizza | 商品管理画面</title>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <img src="../img/ECCPizza_logo_250_90.png" alt="ロゴ" width="125">
+    </h1>
+    <nav>
+      <ul class="nav-menu">
+        <li>商品管理</li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="contentHeader">
+      <h2>商品管理画面</h2>
+      <div>
+        <button id="openItemDialog">商品追加</button>
+      </div>
+    </div>
+    <div id="contentWrap">
+      <table id="itemList">
+        <thead>
+          <tr>
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>商品説明</th>
+            <th>金額</th>
+            <th>コントロール</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0001</td>
+            <td>マルゲリータ</td>
+            <td>絶妙なシンプルさと独自の風味が特長。国産の厳選素材で作られ、No.1人気を誇るマルゲリータ。</td>
+            <td>¥1200</td>
+            <td><button class="remove">削除</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <a href="#"><img src="../img/ECCPizza_logo_s.png" alt="ロゴ" width="200"></a>
+    <p><small>Copyright &copy; 2023 ECC Pizza. All Rights Reserved.</small></p>
+  </footer>
+
+  <!-- 商品追加ダイアログ -->
+  <dialog id="itemDialog">
+    <div id="dialogWrap">
+      <form action="" method="post" id="addItemForm">
+        <div class="form-item-wrap">
+          <label for="itemId">商品ID:</label>
+          <div class="form-item"><input type="text" id="itemId" name="itemId"></div>
+        </div>
+        <div class="form-item-wrap">
+          <label for="itemName">商品名:</label>
+          <div class="form-item"><input type="text" id="itemName" name="itemName"></div>
+        </div>
+        <div class="form-item-wrap">
+          <label for="itemDescription">商品説明:</label>
+          <div class="form-item"><textarea name="itemDescription" id="itemDescription" cols="30" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="form-item-wrap">
+          <label for="itemPrice">金額:</label>
+          <div class="form-item"><input type="text" id="itemPrice" name="itemPrice"></div>
+        </div>
+        <div class="form-item-wrap"><button id="addItem" type="submit">確定</button></div>
+      </form>
+    </div>
+    <span class="material-icons">close</span>
+  </dialog>
+  <script src="../js/kadai07_2.js"></script>
+</body>
+
+</html>

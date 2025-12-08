@@ -48,7 +48,7 @@ addItemBtn.addEventListener("click", (event) => {
 
         // TODO:itemList に入力内容を１行分として追加する
         // ここでは insertAdjacentHTML メソッドを使用、beforeend で末尾追加を指定
-        // XSS の脆弱性あり！
+        // ! XSS の脆弱性あり！
         itemList.insertAdjacentHTML("beforeend", 
             `<tr>
                 <td>${itemID}</td>
