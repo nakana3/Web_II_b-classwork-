@@ -1,0 +1,75 @@
+#wrapper {
+  padding-top: 0;
+}
+
+#content-wrap {
+  padding: 0;
+}
+
+/* スライダー関連 */
+#sliderWrap {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c1d1d5;
+  margin: auto;
+}
+
+#slider {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto;
+}
+
+#slider li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: ease-in-out 1s;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#slider li img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#slider .show {
+  transition: ease-in-out 1s;
+  opacity: 1;
+}
+
+/* slider controller */
+#next,
+#prev {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.4 ease;
+  color: white;
+}
+
+#next:hover,
+#prev:hover {
+  opacity: 0.8;
+}
+
+#next {
+  top: 50%;
+  right: 2%;
+}
+
+#prev {
+  top: 50%;
+  left: 2%;
+}
