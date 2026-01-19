@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/common.css">
+  <link rel="stylesheet" href="styles/kadai11.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>世界遺産ギャラリー2</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <h1 id="logo">Web2 JavaScript</h1>
+    </header>
+    <main id="content-wrap">
+      <div id="mainHeader">
+        <h2>世界遺産ギャラリー2</h2>
+        <span id="searchBtn"><i class="material-icons">search</i></span>
+      </div>
+      <div id="content">
+
+      </div>
+    </main>
+    <footer>
+      <div id="topArea"><a href="#wrapper"><i class="material-icons">keyboard_arrow_up</i></a></div>
+      <p id="copyright" class="font-weight-b">
+        <small>copyright &copy; <span id="year"></span> ECC Comp</small>
+      </p>
+    </footer>
+    <dialog id="searchDialog">
+      <div class="dialog-wrap">
+        <form>
+          <label for="name">名前 : <input type="text" id="searchName" name="name"></label>
+          <label for="country">国 : <input type="text" id="searchCountry" name="country"></label>
+          <button type="submit">検索</button>
+        </form>
+        <i class="material-icons">close</i>
+      </div>
+    </dialog>
+  </div>
+  <script src="js/kadai11.js"></script>
+</body>
+
+</html>
